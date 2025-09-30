@@ -1,0 +1,34 @@
+@startuml Diagrama
+ class Empleado{
+    + __init__(rfc,apellidos,nombre)
+    +ingresos()
+    +descuento()
+    +salario_neto()
+    +informacion()
+    -rfc
+    -nombre
+    -apellidos
+ }
+
+class EmpleadoVendedor{
+    +__init__(rfc,apellidos,nombre,monto_vendido,comision)
+    +ingresos()
+    +bonificacion()
+    +descuento()
+    +sueldo_neto()
+    -monto_vendido
+    -comision
+}
+
+class EmpleadoPermanente{
+    +__init__(rfc,apellidos,nombre,salario,nss)
+    +ingresos()
+    +descuento()
+    +sueldo_neto()
+    -salario
+    -nss
+}
+
+Empleado <--EmpleadoVendedor
+Empleado <--EmpleadoPermanente
+@enduml
